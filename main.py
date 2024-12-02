@@ -26,7 +26,8 @@ class YellowEllipses(QWidget):
             qp = QPainter()
             qp.begin(self)
             d = randint(20, 100)
-            qp.setBrush(QColor("yellow"))
+            r, g, b = self.random_color()
+            qp.setBrush(QColor(r, g, b))
             self.x, self.y = randint(0, 699), randint(0, 699)
             qp.drawEllipse(QPointF(self.x, self.y), d, d)
             self.do = False
@@ -36,6 +37,11 @@ class YellowEllipses(QWidget):
         self.do = True
         self.repaint()
 
+    def random_color(self):
+        r = randint(0, 255)
+        g = randint(0, 255)
+        b = randint(0, 255)
+        return r, g, b
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
