@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QWidget, QApplication, QPushButton
 from random import randint
 
 
-class YellowEllipses(QWidget):
+class ColoredEllipses(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -45,6 +45,6 @@ class YellowEllipses(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = YellowEllipses()
+    ex = ColoredEllipses()
     ex.show()
     sys.exit(app.exec())
